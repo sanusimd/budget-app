@@ -19,28 +19,30 @@
         <div class="col-sm-12 col-md-3 border">
           <h2 class="mb-3">Add Expense</h2>
 
-          <form>
+          <form id="addForm">
             <p class="mb-1">Budget title</p>
             <div class="form-group mb-3">
               <input
                 type="text"
                 class="form-control"
-                id="Inputbudget"
+                id="InputBudgetTitle"
                 placeholder="Enter budget Title"
+                required="required"
               />
             </div>
 
             <p class="mb-1">Amount</p>
             <div class="form-group mb-3">
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="InputAmount"
                 placeholder="Enter Amount"
+                required="required"
               />
             </div>
 
-            <button type="button" class="btn btn-primary mb-3">Add</button>
+            <button type="submit" class="btn btn-primary mb-3">Add</button>
           </form>
         </div>
         <div class="col-sm-12 col-md-9 border">
@@ -50,37 +52,41 @@
           </div>
           <h6 class="title">Expenses List</h6>
           <div class="row ExpensesList-section">
-            <div class="budget col col-md col-sm">
+            <!-- <div class="budget col col-md col-sm">
               <p>Budget Name</p>
-              <p>item 1</p>
+              <p>School fees</p>
             </div>
 
             <div class="BudgetAmount col col-md col-sm">
               <p>Budget Amount</p>
-              <p>item 2</p>
+              <p>$1000</p>
             </div>
 
             <div class="Action col col-md col-sm">
               <p>Edit</p>
               <button class="btn btn-success btn-sm delete">Update</button>
               <button class="btn btn-danger btn-sm delete">Delete</button>
-            </div>
+            </div> -->
+
+            <ul id="items" class="list-group">
+              <li class="list-group-item">
+                Food Supplies
+                <span class="budgetAmount ms-3 me-3">$1000</span>
+                <button
+                  class="btn btn-success btn-sm float-right delete ms-3 me-3"
+                >
+                  Update
+                </button>
+                <button class="btn btn-danger btn-sm float-right delete">
+                  Delete
+                </button>
+              </li>
+            </ul>
           </div>
-          <!-- <ul id="items" class="list-group">
-            <li class="list-group-item ">
-              Food Supplies
-              <span>$1000</span>
-              <button class="btn btn-success btn-sm float-right delete">
-                Update
-              </button>
-              <button class="btn btn-danger btn-sm float-right delete">
-                Delete
-              </button>
-            </li>
-          </ul> -->
         </div>
       </div>
     </div>
+    <script src="app.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
