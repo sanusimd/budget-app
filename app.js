@@ -1,7 +1,10 @@
 // Declearation of variable
 const form = document.querySelector("#addForm");
-
+// ul (list item) variable declearation
 const itemList = document.getElementById("items");
+
+// add eventlistener to ul element (itemList)
+itemList.addEventListener("click", deleteItem);
 
 // Add EventListener to add button (submit)
 form.addEventListener("submit", addExpense);
@@ -35,7 +38,7 @@ function addExpense(e) {
   console.log(span);
 
   //   Add classname to span
-  span.className = "budgetAmount ms-3 me-3";
+  span.className = "budgetAmount ms-3 me-3 d-inline";
 
   //   Append value of Amount budget to span
   li.appendChild(document.createTextNode(budgetAmount));
@@ -76,4 +79,14 @@ function addExpense(e) {
 
   //   form Reset
   form.reset();
+}
+
+// delete button
+function deleteItem(e) {
+  if (e.target.classList.contains("delete")) {
+    if (confirm("Are You Sure ")) {
+      const li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
 }
