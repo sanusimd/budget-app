@@ -3,6 +3,9 @@ const form = document.querySelector("#addForm");
 // ul (list item) variable declearation
 const itemList = document.getElementById("items");
 
+// add eventlistener
+itemList.addEventListener("click", updateItem);
+
 // add eventlistener to ul element (itemList)
 itemList.addEventListener("click", deleteItem);
 
@@ -48,7 +51,7 @@ function addExpense(e) {
   console.log(updateBtn);
 
   //   Add ClassName to Update Button
-  updateBtn.className = "btn btn-success btn-sm float-right delete ms-3 me-3";
+  updateBtn.className = "btn btn-success btn-sm float-right update ms-3 me-3";
 
   //   Add text node to update button
   const updateText = document.createTextNode("Update");
@@ -79,6 +82,14 @@ function addExpense(e) {
 
   //   form Reset
   form.reset();
+}
+
+//  update functionality
+function updateItem(e) {
+  if (e.target.classList.contains("update")) {
+    console.log("update me");
+  }
+  //   console.log("update");
 }
 
 // delete button
