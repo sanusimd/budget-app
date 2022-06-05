@@ -38,8 +38,6 @@ function addExpense(e) {
   //   Create Element Span
   const span = document.createElement("span");
 
-  console.log(span);
-
   //   Add classname to span
   span.className = "budgetAmount ms-3 me-3 d-inline";
 
@@ -48,14 +46,12 @@ function addExpense(e) {
 
   //   Create Update Button element
   const updateBtn = document.createElement("button");
-  console.log(updateBtn);
 
   //   Add ClassName to Update Button
   updateBtn.className = "btn btn-success btn-sm float-right update ms-3 me-3";
 
   //   Add text node to update button
   const updateText = document.createTextNode("Update");
-  console.log(updateText);
 
   //   Append text to update button
   updateBtn.appendChild(updateText);
@@ -65,14 +61,12 @@ function addExpense(e) {
 
   //   Create Update Button element
   const deleteBtn = document.createElement("button");
-  console.log(deleteBtn);
 
   //   Add ClassName to Update Button
   deleteBtn.className = "btn btn-danger btn-sm float-right delete ms-3 me-3";
 
   //   Add text node to update button
   const deleteText = document.createTextNode("Delete");
-  console.log(deleteText);
 
   //   Append text to update button
   deleteBtn.appendChild(deleteText);
@@ -80,8 +74,28 @@ function addExpense(e) {
   //   append update button  to li (parentelement)
   li.appendChild(deleteBtn);
 
-  //   form Reset
+  //  Display info message when expense Added
+  infoUpdate();
+
+  // remove info message
+  setTimeout(timerId, 3000);
+
+  //form Reset
   form.reset();
+}
+
+// display text
+function infoUpdate() {
+  const infoText = (document.querySelector(".info").textContent =
+    "Record has been added!");
+  console.log(infoText);
+  return infoText;
+}
+
+function timerId() {
+  const infoText = (document.querySelector(".info").textContent = "");
+
+  return console.log("timer");
 }
 
 //  update functionality
